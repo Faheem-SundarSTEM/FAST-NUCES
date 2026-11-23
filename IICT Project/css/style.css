@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    
+}
+/* Background GIF */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../images/bg-dark.gif") center / cover no-repeat;
+    opacity: 0.93;
+    z-index: -1;
+}
+
+:root[data-theme="light"] body::before {
+    background-image: url("../images/bg-light.gif");
+    opacity: 0.45;
+}
+
+:root { /* Defining varibales to be used throughout the webpage */
+    --bg-color: #171717;
+    --text-color: #F3EBD6;
+    --accent-color: #E8BD35;
+    --border-color: #645421;
+    --surface-color: #201B13;
+}
+
+/* Light Theme Variables */
+
+:root[data-theme="light"] {
+    --bg-color: #F7F0DF;
+    --surface-color: #FFF9EC;
+    --text-color: #302B22;
+    --accent-color: #7D5B0D;
+    --border-color: #C8B689;
+}
+
+body {
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: "Courier New", monospace;
+}
+
+/* Header */
+
+.navbar-toggler {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/* Mobile and tablet screens */
+@media (max-width: 991px) {
+
+    #logo img {
+        width: 150px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    #theme {
+        margin-top: 15px;
+    }
+} 
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    border-bottom: 2px dashed var(--border-color);
+    background-color: var(--surface-color);
+}
+
+
+#logo img {
+    width: 200px;
+    height: auto; 
+    transition: transform 0.3s ease; /* transition of transforming its size by 5% in 0.3s */
+}
+
+#logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex; /* flex arrange the child elements then */
+    align-items: center;
+    gap: 24px; 
+
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3 ease; /* The transtion of color when hovered */
+    
+}
+
+.nav-links a:hover {
+    
+    color: var(--accent-color)
+}
+
+#theme-toggle {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Page 1  */
+
+/* Section-1 (Hero) */
+
+.hero {
+    background-color: var(--bg-color);
+    padding: 60px 6%;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.hero-label {
+    color: #B9B2A6;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 64px;
+    font-weight: 900; /* makes the heading bold */
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    margin-bottom: 28px;
+    max-width: 800px; /* This sets a strict limit on how wide an element is allowed to stretch horizontally. */
+}
+
+.hero-description {
+    font-size: 25px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 28px;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 14px 24px;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+/* Section 2 */
+
+.featured {
+    padding: 40px 6%;
+}
+
+.departure-board {
+    background-color: var(--surface-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 1000px;
+}
+
+.board-label {
+    color: var(--accent-color);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.departure-board h2 {
+    color: var(--text-color);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.board-info {
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: flex; 
+    flex-wrap: wrap; /* by defualt flex container forces all the items to be in a horizontal row but wrap says that if there isnt enough space then drop down to next row */
+    gap: 15px;
+}
+
+.time-box {
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 15px;
+    min-width: 90px;
+    text-align: center;
+}
+
+.time-box strong {
+    display: block; /* Makes the countdown number occupy its own line above its label like above Days,Hours */
+    color: var(--accent-color);
+    font-size: 30px;
+}
+
+.time-box span {
+    font-size: 13px;
+}
+
+.departure-board a {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 12px 20px;
+    margin-top: 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    
+}
+
+/* Section 3 Popular Events */
+
+.event-ticket {
+    position: relative;
+    background-color: #F3EBD6;
+    color: #171717;
+    padding: 18px 22px;
+    border-top: 5px solid var(--accent-color);
+    border-radius: 8px;
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.event-ticket:hover {
+    transform: translateY(-8px); /* hover the ticket 8px upwards */
+    box-shadow: 8px #ffc637; /* create a shdow towards bottom */
+    
+}
+
+
+
+.popular-events h2 {
+    color: var(--accent-color);
+    font-family: "Courier New", monospace;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 50px;
+    padding-bottom: 5px;
+    
+}
+
+.event-ticket h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.event-ticket p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.event-ticket a {
+    display: block;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 2px dashed #B9A992;
+    color: #755409;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.event-ticket a:hover {
+    text-decoration: underline;
+    
+}
+
+
+
+/* Section 4 Announcement */
+
+.announcements {
+    padding: 30px 4%;
+}
+
+.announcements h2 {
+    color: var(--accent-color);
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.announcement {
+    background-color: var(--surface-color);
+    border-left: 4px solid var(--accent-color); /* Design of border towards left */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.announcement h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.announcement p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.announcements a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.announcements a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+.site-footer {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 25px;
+    border-top: 2px dashed var(--border-color);
+}
+
+.site-footer p {
+    font-size: 13px;
+    
+}
+
+/* News Page */
+
+.news-section {
+    padding: 50px 6%;
+}
+
+.news-section h1 {
+    color: var(--accent-color);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.news-section > p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Bootstrap Accordion */
+
+.accordion-item {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.accordion-body h3 {
+    color: var(--accent-color);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.accordion-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Make the Bootstrap arrow visible in dark mode */
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+:root[data-theme="light"] .accordion-button::after {
+    filter: none;
+}
+
+
+/* Page 2 - Section 2 */
+
+.news-carousel {
+    padding: 40px 6%;
+}
+
+.news-carousel h2 {
+    color: var(--accent-color);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.news-carousel > p {
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.news-carousel img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-caption {
+    background-color: #171717;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.carousel-caption h3 {
+    color: #E8BD35;
+    font-size: 22px;
+}
+
+.carousel-caption p {
+    color: #F3EBD6;
+    font-size: 14px;
+}
+
+/* Smaller screens */
+
+@media (max-width: 768px) {
+    .news-carousel img {
+        height: 250px;
+    }
+}
+
+
+
+/* Page 5 - Resource Center (Bootstrap tabs) */
+
+.nav-tabs {
+    border-bottom: 2px dashed var(--border-color);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-color);
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: color 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+    border-color: var(--border-color) var(--border-color) var(--surface-color);
+}
+
+.tab-content {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    padding: 25px;
+}
+
+.tab-content h3 {
+    color: var(--accent-color);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.tab-content p,
+.tab-content li {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.tab-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+/* Button used inside tabs and the form (same look as the hero button) */
+
+.tab-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tab-btn:hover {
+    transform: translateY(-3px);
+    color: var(--bg-color);
+}
+
+/* Page 6 - Contact form and map */
+
+#proposal-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+#proposal-form .form-control {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    font-family: "Courier New", monospace;
+}
+
+#proposal-form .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+
+#proposal-form .tab-btn {
+    margin-top: 20px;
+}
+
+.error-msg {
+    color: #e05a4f;
+    display: block;
+    min-height: 18px;
+}
+
+#success-msg {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+
+/* Page 3 - Upcoming Events */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Each category has its own color */
+
+.event-card.academic { --cat-color: oklab(77.257% -0.01362 0.14999); }
+.event-card.cultural { --cat-color: #b85737; }
+.event-card.sports   { --cat-color: lab(44.22% 56.9 55.71); }
+.event-card.career   { --cat-color: lab(41.92% -10.03 48.43); }
+
+.event-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--cat-color);
+    border-radius: 8px;
+    padding: 18px;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 var(--cat-color);
+}
+
+.event-cat {
+    color: var(--cat-color);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.event-card h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.event-date {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Details are hidden until the card is hovered */
+
+.event-more {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 13px;
+}
+
+.event-card:hover .event-more {
+    max-height: 80px;
+    margin-top: 10px;
+}
+
+.event-more p {
+    margin: 0;
+}
+
+/* Bootstrap modal */
+
+.modal-content {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    font-family: "Courier New", monospace;
+}
+
+.modal-header {
+    border-bottom: 2px dashed var(--border-color);
+}
+
+.modal-title {
+    color: var(--accent-color);
+    font-size: 22px;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+:root[data-theme="light"] .btn-close {
+    filter: none;
+}
+
+/* Page 4 - Clubs and Societies */
+
+.club-technical { --club-color: lch(75.71% 73.94 90.92); }
+.club-arts      { --club-color: #b85737; } 
+.club-sports    { --club-color: lab(44.22% 56.9 55.71); }
+.club-welfare   { --club-color: lab(41.92% -10.03 48.43);}
+
+.club-section {
+    margin-bottom: 35px;
+}
+
+.club-section h2 {
+    color: var(--club-color);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.club-card {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    padding: 20px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.club-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.club-card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.club-contact {
+    color: var(--club-color);
+    font-weight: bold;
+}
+
+.club-card:hover {
+    transform: scale(1.04);
+}
+
+.club-card:hover h3 {
+    color: var(--club-color);
+}
+
+/* A different card style for each society type */
+
+.club-technical .club-card {
+    border: 2px solid var(--club-color);
+    border-radius: 0;
+}
+
+.club-arts .club-card {
+    border: 2px solid var(--club-color);
+    border-radius: 25px;
+}
+
+.club-sports .club-card {
+    border-left: 8px solid var(--club-color);
+    border-radius: 6px;
+}
+
+.club-welfare .club-card {
+    border: 2px dashed var(--club-color);
+    border-radius: 12px;
+}

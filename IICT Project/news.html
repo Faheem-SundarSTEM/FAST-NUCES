@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <!-- The data-theme="dark" attribute tells us which theme is currently active. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Event Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header>
+     <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img id="theme-logo"
+                         src="images/logo-dark.png"
+                         alt="The Event Terminal Logo">
+                </a>
+            </div>
+           
+
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse"    
+                    data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <div class="nav-links navbar-nav ms-auto">
+                    <a href="index.html">HOME</a>
+                    <a href="news.html">NEWS</a>
+                    <a href="events.html">EVENTS</a>
+                    <a href="clubs.html">CLUBS</a>
+                    <a href="resources.html">RESOURCES</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+
+                <div id="theme" class="ms-lg-3">
+                    <button id="theme-toggle">LIGHT MODE</button>
+                </div>
+
+            </div>
+        </div>
+     </nav>
+    </header>
+    <main>
+        <section class="news-section">
+
+            <h1>CAMPUS BULLETIN</h1>
+
+            <p>
+                Stay updated with the latest news, announcements,
+                and activities at The Event Terminal.
+            </p>
+
+            <!-- Bootstrap Accordion -->
+
+            <div class="accordion" id="newsAccordion">
+
+                <!-- News Article 1: Tech Fest --> 
+                <!-- target tells the bootstrap which element it should open or close -->
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+                        <button class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#news1" 
+                                aria-expanded="true"
+                                aria-controls="news1">
+                            Tech Fest 2026
+                        </button>
+                    </h2>
+
+                    <div id="news1"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#newsAccordion">
+
+                        <div class="accordion-body">
+                            <h3>Innovation Meets Creativity</h3>
+                            <p>
+                                Get ready to explore technology, innovation,
+                                and creativity at Tech Fest 2026.
+                                Students can discover exciting competitions,
+                                coding challenges, and technology showcases.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- News Article 2: Student Societies -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#news2"
+                                aria-expanded="false"
+                                aria-controls="news2">
+                            Student Society Registrations
+                        </button>
+                    </h2>
+
+                    <div id="news2"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#newsAccordion">
+
+                        <div class="accordion-body">
+                            <h3>Find Your Community</h3>
+                            <p>
+                                University societies offer opportunities
+                                to develop new skills, meet fellow students,
+                                and participate in campus activities.
+                                Explore academic, cultural, and sports
+                                societies to find your interests.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- News Article 3: Cricket Cup -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#news3"
+                                aria-expanded="false"
+                                aria-controls="news3">
+                            Campus Cricket Cup
+                        </button>
+                    </h2>
+
+                    <div id="news3"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#newsAccordion">
+
+                        <div class="accordion-body">
+                            <h3>The Battle for the Cup</h3>
+                            <p>
+                                Experience the excitement of campus cricket
+                                as student teams prepare to compete.
+                                Follow tournament updates, match schedules,
+                                and highlights as the competition unfolds.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+     <!-- Section 2: Campus Highlights Carousel -->
+
+        <section class="news-carousel">
+
+            <h2>CAMPUS HIGHLIGHTS</h2>
+
+            <p>Catch a glimpse of exciting moments around campus.</p>
+
+            <div id="newsCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="3000">
+
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+
+                    <div class="carousel-item active">
+                        <img src="images/fast-techh.webp"
+                            class="d-block w-100"
+                            alt="Tech Fest">
+
+                        <div class="carousel-caption">
+                            <h3>TECH FEST</h3>
+                            <p>Innovation, creativity and technology.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+
+                    <div class="carousel-item">
+                        <img src="images/fast-cricket2.jpg"
+                            class="d-block w-100"
+                            alt="Cricket Cup">
+
+                        <div class="carousel-caption">
+                            <h3>CRICKET CUP</h3>
+                            <p>Where teamwork meets competition.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+
+                    <div class="carousel-item">
+                        <img src="images/fast-qawwali.jpg"
+                            class="d-block w-100"
+                            alt="Qawwali Night">
+
+                        <div class="carousel-caption">
+                            <h3>QAWWALI NIGHT</h3>
+                            <p>Celebrating music and campus culture.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Previous Button -->
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#newsCarousel"
+                        data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"></span>
+
+                </button>
+
+                <!-- Next Button -->
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#newsCarousel"
+                        data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"></span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <p>THE EVENT TERMINAL | YOUR CAMPUS. YOUR JOURNEY.</p>
+        <p>&copy; 2026 The Event Terminal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

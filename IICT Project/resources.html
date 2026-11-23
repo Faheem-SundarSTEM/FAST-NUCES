@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""> <!-- The data-theme="dark" attribute tells us which theme is currently active. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Event Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header>
+     <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img id="theme-logo"
+                         src="images/logo-dark.png"
+                         alt="The Event Terminal Logo">
+                </a>
+            </div>
+           
+
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse"    
+                    data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <div class="nav-links navbar-nav ms-auto">
+                    <a href="index.html">HOME</a>
+                    <a href="news.html">NEWS</a>
+                    <a href="events.html">EVENTS</a>
+                    <a href="clubs.html">CLUBS</a>
+                    <a href="resources.html">RESOURCES</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+
+                <div id="theme" class="ms-lg-3">
+                    <button id="theme-toggle">LIGHT MODE</button>
+                </div>
+
+            </div>
+        </div>
+     </nav>
+    </header>
+    <main>
+        <section class="news-section">
+
+            <h1>RESOURCE CENTER</h1>
+            <p>Everything you need to organize or attend an event on campus.</p>
+
+            <!-- Bootstrap Tabs -->
+            <ul class="nav nav-tabs" id="resourceTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#venue" type="button" role="tab">VENUE BOOKING</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab">EVENT RULES</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#forms" type="button" role="tab">FORMS</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#faqs" type="button" role="tab">FAQS</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- Tab 1: Venue Booking -->
+                <div class="tab-pane fade show active" id="venue" role="tabpanel">
+                    <h3>Book a Venue</h3>
+                    <p>Venues are given on a first come, first served basis. Submit your request at least 7 days before the event.</p>
+                    <ul>
+                        <li>Main Auditorium - up to 500 people</li>
+                        <li>Seminar Hall - up to 150 people</li>
+                        <li>Cricket Ground - sports events</li>
+                        <li>Open Lawn - cultural and social events</li>
+                    </ul>
+                    <a href="contact.html" class="tab-btn">SEND A PROPOSAL</a>
+                </div>
+
+                <!-- Tab 2: Event Rules -->
+                <div class="tab-pane fade" id="rules" role="tabpanel">
+                    <h3>Event Rules</h3>
+                    <ul>
+                        <li>Every event needs approval from the event department.</li>
+                        <li>Events must end by 9:00 PM unless special permission is given.</li>
+                        <li>Organizers are responsible for the venue and its equipment.</li>
+                        <li>Respect campus rules and keep the venue clean.</li>
+                        <li>Posters must be approved before they are displayed.</li>
+                    </ul>
+                </div>
+
+                <!-- Tab 3: Downloadable Forms -->
+                <div class="tab-pane fade" id="forms" role="tabpanel">
+                    <h3>Downloadable Forms</h3>
+                    <p>Download, fill in and submit these forms to the event department office.</p>
+                    <ul>
+                        <li>Event Approval Form</li>
+                        <li>Venue Booking Form</li>
+                        <li>Budget Request Form</li>
+                    </ul>
+                    <a href="C:\Users\fahee\Documents\IICT Guide" class="tab-btn">DOWNLOAD FORMS</a>
+                </div>
+
+                <!-- Tab 4: FAQs -->
+                <div class="tab-pane fade" id="faqs" role="tabpanel">
+                    <h3>Frequently Asked Questions</h3>
+                    <p><strong>Who can organize an event?</strong><br>Any registered student society.</p>
+                    <p><strong>How long does approval take?</strong><br>Usually 3 to 5 working days.</p>
+                    <p><strong>Can I attend events from other departments?</strong><br>Yes, all students are welcome.</p>
+                    <p><strong>Where do I submit my forms?</strong><br>At the event department office or through the Contact page.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <p>THE EVENT TERMINAL | YOUR CAMPUS. YOUR JOURNEY.</p>
+        <p>&copy; 2026 The Event Terminal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <!-- The data-theme="dark" attribute tells us which theme is currently active. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Event Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header>
+     <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img id="theme-logo"
+                         src="images/logo-dark.png"
+                         alt="The Event Terminal Logo">
+                </a>
+            </div>
+           
+
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse"    
+                    data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <div class="nav-links navbar-nav ms-auto">
+                    <a href="index.html">HOME</a>
+                    <a href="news.html">NEWS</a>
+                    <a href="events.html">EVENTS</a>
+                    <a href="clubs.html">CLUBS</a>
+                    <a href="resources.html">RESOURCES</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+
+                <div id="theme" class="ms-lg-3">
+                    <button id="theme-toggle">LIGHT MODE</button>
+                </div>
+
+            </div>
+        </div>
+     </nav>
+    </header>
+    <main>
+        <section class="news-section">
+
+            <h1>UPCOMING DEPARTURES</h1>
+            <p>Browse upcoming events and filter them by category.</p>
+
+            <!-- Filter Buttons -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="academic">ACADEMIC</button>
+                <button class="filter-btn" data-filter="cultural">CULTURAL</button>
+                <button class="filter-btn" data-filter="sports">SPORTS</button>
+                <button class="filter-btn" data-filter="career">CAREER</button>
+            </div>
+
+            <!-- Event Cards (Bootstrap grid) -->
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="academic">
+                    <article class="event-card academic"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Tech Fest" data-date="16 Dec 2026" data-time="10:00 AM"
+                             data-venue="Main Auditorium" data-desc="Coding challenges, robotics demos and technology showcases from students across all departments.">
+                        <span class="event-cat">ACADEMIC</span>
+                        <h3>TECH FEST</h3>
+                        <p class="event-date">16 Dec 2026 · Main Auditorium</p>
+                        <div class="event-more">
+                            <p>Time: 10:00 AM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="academic">
+                    <article class="event-card academic"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Quiz Bowl" data-date="18 Dec 2026" data-time="11:00 AM"
+                             data-venue="Seminar Hall" data-desc="Teams of three compete in rounds of general knowledge, science and current affairs.">
+                        <span class="event-cat">ACADEMIC</span>
+                        <h3>QUIZ BOWL</h3>
+                        <p class="event-date">18 Dec 2026 · Seminar Hall</p>
+                        <div class="event-more">
+                            <p>Time: 11:00 AM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="cultural">
+                    <article class="event-card cultural"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Qawwali Night" data-date="20 Dec 2026" data-time="7:00 PM"
+                             data-venue="Open Lawn" data-desc="An evening of soulful qawwali performed by student artists and special guests.">
+                        <span class="event-cat">CULTURAL</span>
+                        <h3>QAWWALI NIGHT</h3>
+                        <p class="event-date">20 Dec 2026 · Open Lawn</p>
+                        <div class="event-more">
+                            <p>Time: 7:00 PM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="cultural">
+                    <article class="event-card cultural"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Art Exhibition" data-date="22 Dec 2026" data-time="10:00 AM"
+                             data-venue="Student Gallery" data-desc="Paintings, sketches and digital art created by students, open to everyone.">
+                        <span class="event-cat">CULTURAL</span>
+                        <h3>ART EXHIBITION</h3>
+                        <p class="event-date">22 Dec 2026 · Student Gallery</p>
+                        <div class="event-more">
+                            <p>Time: 10:00 AM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="sports">
+                    <article class="event-card sports"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Cricket Cup" data-date="24 Dec 2026" data-time="9:00 AM"
+                             data-venue="Cricket Ground" data-desc="Campus teams compete in a knockout tournament for the championship trophy.">
+                        <span class="event-cat">SPORTS</span>
+                        <h3>CRICKET CUP</h3>
+                        <p class="event-date">24 Dec 2026 · Cricket Ground</p>
+                        <div class="event-more">
+                            <p>Time: 9:00 AM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="sports">
+                    <article class="event-card sports"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Futsal Tournament" data-date="26 Dec 2026" data-time="3:00 PM"
+                             data-venue="Sports Complex" data-desc="Fast five-a-side matches between departments. Register your team early.">
+                        <span class="event-cat">SPORTS</span>
+                        <h3>FUTSAL TOURNAMENT</h3>
+                        <p class="event-date">26 Dec 2026 · Sports Complex</p>
+                        <div class="event-more">
+                            <p>Time: 3:00 PM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="career">
+                    <article class="event-card career"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Career Fair" data-date="28 Dec 2026" data-time="10:00 AM"
+                             data-venue="Main Auditorium" data-desc="Meet companies, drop off your CV and learn about internships and jobs.">
+                        <span class="event-cat">CAREER</span>
+                        <h3>CAREER FAIR</h3>
+                        <p class="event-date">28 Dec 2026 · Main Auditorium</p>
+                        <div class="event-more">
+                            <p>Time: 10:00 AM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 event-col" data-category="career">
+                    <article class="event-card career"
+                             data-bs-toggle="modal" data-bs-target="#eventModal"
+                             data-title="Resume Workshop" data-date="30 Dec 2026" data-time="2:00 PM"
+                             data-venue="Seminar Hall" data-desc="Learn how to write a strong resume and prepare for your first interview.">
+                        <span class="event-cat">CAREER</span>
+                        <h3>RESUME WORKSHOP</h3>
+                        <p class="event-date">30 Dec 2026 · Seminar Hall</p>
+                        <div class="event-more">
+                            <p>Time: 2:00 PM</p>
+                            <p>Click for full details</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Bootstrap Modal (one modal, filled by JavaScript) -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title"></h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Date:</strong> <span id="modal-date"></span></p>
+                        <p><strong>Time:</strong> <span id="modal-time"></span></p>
+                        <p><strong>Venue:</strong> <span id="modal-venue"></span></p>
+                        <p id="modal-desc"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="site-footer">
+        <p>THE EVENT TERMINAL | YOUR CAMPUS. YOUR JOURNEY.</p>
+        <p>&copy; 2026 The Event Terminal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
